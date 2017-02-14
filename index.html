@@ -11,15 +11,14 @@
 
 	<div class="container">
 		<h1>Pokésir</h1>
-        <input type="integer" name ="id" ng-model="idrecup"></input>
+        <input type="text" name ="id" ng-model="idrecup"></input>
         {{idrecup}}
 		<!-- Search -->
 		<div ng-controller="PokeControlleur">
-            <SELECT name="nom" size="1">
-            <OPTION ng-repeat= "i in pokelist"> {{i.name}} </OPTION>
+            <SELECT name="nom" size="1" ng-model="idrecup">
+            <OPTION ng-repeat= "i in pokelist" | filter: idrecup> {{i.name}} </OPTION>
             </SELECT>
         </div>
-
 
 		<!-- Pokémon information -->
 		<div></div>
